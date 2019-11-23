@@ -13,8 +13,10 @@ class Admin extends CI_Controller
 	}
     public function index()
     {
+       $this->load->model('M_pengaduan');
        $data['title'] = 'Admin';
        $data['jml_user'] = $this->M_user->getAllUser()->num_rows();
+       $data['laporan'] = $this->M_pengaduan->getAllPengaduan()->num_rows();
        $this->load->view('template/header', $data);
        $this->load->view('admin/index', $data);
        $this->load->view('template/footer');
