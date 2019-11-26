@@ -12,4 +12,9 @@ class M_user extends CI_Model
     	$sql = "select a.nip as nip, a.username as username, a.email as email, c.nama as role,c.penempatan as penempatan,b.nama as kantor, a.password as password from user a left join cabang b on a.id_cabang=b.id left join role c on a.role=c.id";
     	return $this->db->query($sql);
     }
+
+    function detailUser($nip){
+    	$sql = "SELECT * FROM user a inner join detail_user b on a.nip=b.nip where a.nip=".$this->db->escape($nip);
+    	return $this->db->query($sql);
+    }
 }

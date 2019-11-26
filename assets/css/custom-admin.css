@@ -4,3 +4,9 @@
 .number {
 	color : #fff !important;
 }
+
+@media(max-width:320px){
+    .card   {
+        overflow-x: scroll;
+    }
+}

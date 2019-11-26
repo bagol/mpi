@@ -34,13 +34,7 @@
     <script src="<?= base_url('assets/'); ?>cooladmin/vendor/circle-progress/circle-progress.min.js"></script>
     <script src="<?= base_url('assets/'); ?>cooladmin/vendor/perfect-scrollbar/perfect-scrollbar.js"></script>
     <script src="<?= base_url('assets/'); ?>cooladmin/vendor/chartjs/Chart.bundle.min.js"></script>
-    <script src="<?= base_url('assets/'); ?>cooladmin/vendor/select2/select2.min.js">
-    </script>
+    <script src="<?= base_url('assets/'); ?>cooladmin/vendor/select2/select2.min.js"></script>
 
     <!-- Main JS-->
     <script src="<?= base_url('assets/'); ?>cooladmin/js/main.js"></script>
-
-</body>
-
-</html>
-<!-- end document-->

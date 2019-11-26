@@ -35,6 +35,12 @@
 
     <!-- Custom CSS -->
     <link href="<?= base_url('assets/'); ?>css/custom-admin.css" rel="stylesheet" media="all">
+
+    <!-- datatables -->
+    <link rel="stylesheet" type="text/css" href="<?= base_url('assets/'); ?>DataTables/datatables.min.css"/>
+    <link rel="stylesheet" type="text/css" href="<?= base_url('assets/'); ?>DataTables/DataTables/datatables.bootstrap-4.min.css"/>
+
+
 </head>
 
 <body class="animsition">
@@ -87,12 +93,8 @@
                                             </div>
                                             <div class="account-dropdown__body">
                                                 <div class="account-dropdown__item">
-                                                    <a href="#">
+                                                    <a href="<?= base_url('User/acount') ?>">
                                                         <i class="zmdi zmdi-account"></i>Account</a>
-                                                </div>
-                                                <div class="account-dropdown__item">
-                                                    <a href="#">
-                                                        <i class="zmdi zmdi-settings"></i>Setting</a>
                                                 </div>
                                             </div>
                                             <div class="account-dropdown__footer">
@@ -113,4 +115,11 @@
             <div class="main-content">
                 <div class="section__content section__content--p30">
                     <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="overview-wrap">
+                                    <h2 class="title-1"><?= $title ?></h2>
+                                </div>
+                            </div>
+                        </div>
                         
