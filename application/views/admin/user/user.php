@@ -1,4 +1,14 @@
-<a href="" class="btn btn-primary mt-2"><i class="fa fa-plus"></i> Tambah Pegawai</a>
+<?php if ($this->session->flashdata('msg_berhasil')): ?>
+    <div class="sufee-alert alert with-close alert-success alert-dismissible fade show">
+        <span class="badge badge-pill badge-success">Berhasil</span>
+        <?= $this->session->flashdata('msg_berhasil') ?>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
+<?php endif ?>
+
+<a href="<?= base_url('Admin/buatUser')?>" class="btn btn-primary mt-2"><i class="fa fa-plus"></i> Tambah Pegawai</a>
 
 <div class="col-md-12 mt-4">
     <div class="card">

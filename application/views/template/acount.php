@@ -1,3 +1,13 @@
+<?php if ($this->session->flashdata('msg_berhasil')): ?>
+    <div class="sufee-alert alert with-close alert-success alert-dismissible fade show">
+        <span class="badge badge-pill badge-success">Berhasil</span>
+        <?= $this->session->flashdata('msg_berhasil') ?>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
+<?php endif ?>
+
 <div class="row">
 	<div class="col-lg-4 col-xs-12">
 		<div class="card">
@@ -6,14 +16,16 @@
             </div>
             <div class="card-body">
                 <div class="mx-auto d-block">
-                    <img class="rounded-circle mx-auto d-block" src="<?= base_url('images/foto_profile/') ?>user.png" alt="Card image cap">
+                    <img class="rounded mx-auto d-block" src="<?= base_url('images/foto_profile/') ?><?= $this->session->userdata('foto') ?>" alt="Card image cap">
                     <h5 class="text-sm-center mt-2 mb-1"><?= $this->session->userdata('username'); ?></h5>
                     <div class="location text-sm-center">
                         <i class="fa fa-map-marker"></i> <?= $this->session->userdata('penempatan'); ?></div>
                 </div>
                 <hr>
                 <div class="card-text text-sm-center">
-              		<button class="btn btn-info" > Ubah <i class="far fa-edit"></i> </button>
+                    <button type="button" class="btn btn-info mt-2" data-toggle="modal" data-target="#exampleModalEditFoto">
+                      Ubah <i class="far fa-edit"></i>
+                    </button>
                 </div>
             </div>
         </div>

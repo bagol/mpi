@@ -38,7 +38,7 @@
 
     <!-- datatables -->
     <link rel="stylesheet" type="text/css" href="<?= base_url('assets/'); ?>DataTables/datatables.min.css"/>
-    <link rel="stylesheet" type="text/css" href="<?= base_url('assets/'); ?>DataTables/DataTables/datatables.bootstrap-4.min.css"/>
+    <!-- <link rel="stylesheet" type="text/css" href="<?= base_url('assets/'); ?>DataTables/DataTables/datatables.bootstrap-4.min.css"/> -->
 
 
 </head>
@@ -68,7 +68,7 @@
                                 <div class="account-wrap">
                                     <div class="account-item clearfix js-item-menu">
                                         <div class="image">
-                                            <img src="<?= base_url(); ?>images/foto_profile/user.png" alt="John Doe" />
+                                            <img src="<?= base_url(); ?>images/foto_profile/<?= $this->session->userdata('foto'); ?>" />
                                         </div>
                                         <div class="content">
                                             <a class="js-acc-btn" href="#"><?= $this->session->userdata('username'); ?></a>
@@ -77,7 +77,7 @@
                                             <div class="info clearfix">
                                                 <div class="image">
                                                     <a href="#">
-                                                        <img src="<?= base_url(); ?>images/foto_profile/user.png" alt="John Doe" />
+                                                        <img src="<?= base_url(); ?>images/foto_profile/<?= $this->session->userdata('foto'); ?>" alt="John Doe" />
                                                     </a>
                                                 </div>
                                                 <div class="content">

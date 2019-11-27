@@ -38,3 +38,4 @@
 
     <!-- Main JS-->
     <script src="<?= base_url('assets/'); ?>cooladmin/js/main.js"></script>
+    <script src="<?= base_url('assets/'); ?>js/preview.js"></script>

@@ -34,7 +34,8 @@ class Login extends CI_Controller
                     'email'     => $user->email,
                     'role'      => $user->role,
                     'penempatan'=> $user->penempatan,
-                    'kantor'    => $user->kantor
+                    'kantor'    => $user->kantor,
+                    'foto'      => $user->foto
                 ];
                 $this->session->set_userdata($user);
                 $this->session->set_flashdata('msg', 'Selamat Datang');
