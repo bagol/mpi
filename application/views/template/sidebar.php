@@ -22,16 +22,13 @@
                         <a class="js-arrow" href="<?= base_url('admin') ?>"><i class="fas fa-tachometer-alt"></i>Dashboard</a>
                     </li>
                     <li class="has-sub">
-                        <a class="js-arrow" href="#"><i class="fas fa-copy"></i>Pengaduan</a>
+                        <a class="js-arrow" href="<?= base_url('Admin/pengaduan') ?>"><i class="fas fa-copy"></i>Pengaduan</a>
                     </li>
                     <li class="has-sub">
                         <a class="js-arrow" href="<?= base_url('Admin/user') ?>"><i class="fas fa-users"></i>User</a>
                     </li>
                     <li class="has-sub">
                         <a class="js-arrow" href="<?= base_url('Admin/cabang') ?>"><i class="zmdi zmdi-city-alt"></i>Cabang</a>
-                    </li>
-                    <li class="has-sub">
-                        <a class="js-arrow" href="#"><i class="fas fa-file"></i>Laporan</a>
                     </li>
                 </ul>
             </div>
@@ -53,16 +50,13 @@
                         <a class="js-arrow" href="<?= base_url('admin') ?>"><i class="fas fa-tachometer-alt"></i>Dashboard</a>
                     </li>
                     <li class="has-sub">
-                        <a class="js-arrow" href="#"><i class="fas fa-copy"></i>Pengaduan</a>
+                        <a class="js-arrow" href="<?= base_url('Admin/pengaduan') ?>"><i class="fas fa-copy"></i>Pengaduan</a>
                     </li>
                     <li class="has-sub">
                         <a class="js-arrow" href="<?= base_url('Admin/user') ?>"><i class="fas fa-users"></i>User</a>
                     </li>
                     <li class="has-sub">
                         <a class="js-arrow" href="<?= base_url('Admin/cabang') ?>"><i class="zmdi zmdi-city-alt"></i>Cabang</a>
-                    </li>
-                    <li class="has-sub">
-                        <a class="js-arrow" href="#"><i class="fas fa-file"></i>Laporan</a>
                     </li>
                 </ul>
 
@@ -149,7 +143,10 @@
                         <a class="js-arrow" href="#"><i class="fas fa-tachometer-alt"></i>Dashboard</a>
                     </li>
                     <li class="has-sub">
-                        <a class="js-arrow" href="#"><i class="fas fa-copy"></i>Pengaduan</a>
+                        <a class="js-arrow" href="<?= base_url('Penyidik/pengaduan') ?>"><i class="fas fa-copy"></i>Pengaduan</a>
+                    </li>
+                    <li class="has-sub">
+                        <a class="js-arrow" href="<?= base_url('Penyidik/taks') ?>"><i class="fas fa-list"></i>Tugas</a>
                     </li>
                 </ul>
             </div>
@@ -171,7 +168,10 @@
                         <a class="js-arrow" href="#"><i class="fas fa-tachometer-alt"></i>Dashboard</a>
                     </li>
                     <li class="has-sub">
-                        <a class="js-arrow" href="#"><i class="fas fa-copy"></i>Pengaduan</a>
+                        <a class="js-arrow" href="<?= base_url('Penyidik/pengaduan') ?>"><i class="fas fa-copy"></i>Pengaduan</a>
+                    </li>
+                    <li class="has-sub">
+                        <a class="js-arrow" href="<?= base_url('Penyidik/taks') ?>"><i class="fas fa-list"></i>Tugas</a>
                     </li>
                 </ul>
 
@@ -204,7 +204,7 @@
                         <a class="js-arrow" href="#"><i class="fas fa-tachometer-alt"></i>Dashboard</a>
                     </li>
                     <li class="has-sub">
-                        <a class="js-arrow" href="#"><i class="fas fa-copy"></i>Pengaduan</a>
+                        <a class="js-arrow" href="<?= base_url('Resolusi/pengaduan') ?>"><i class="fas fa-copy"></i>Pengaduan</a>
                     </li>
                 </ul>
             </div>
@@ -226,7 +226,7 @@
                         <a class="js-arrow" href="#"><i class="fas fa-tachometer-alt"></i>Dashboard</a>
                     </li>
                     <li class="has-sub">
-                        <a class="js-arrow" href="#"><i class="fas fa-copy"></i>Pengaduan</a>
+                        <a class="js-arrow" href="<?= base_url('Resolusi/pengaduan') ?>"><i class="fas fa-copy"></i>Pengaduan</a>
                     </li>
                 </ul>
 

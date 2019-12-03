@@ -18,12 +18,14 @@ class User extends CI_Controller
 	}
 
 	function acount(){
+		$this->load->model('M_daerah');
 	    $data['title'] = 'Acount';
 	    $data['user'] = $this->M_user->detailUser($this->session->userdata('nip'))->row();
+	    $data['provinsi'] = $this->M_daerah->provinsi()->result_array();
 	    $this->load->view('template/header',$data);
 	    $this->load->view('template/acount',$data);
 	    $this->load->view('template/footer');
-	    $this->load->view('user/footer');
+	    $this->load->view('user/footer',$data);
 	 }
 
 	 function ceksesion(){
@@ -101,7 +103,7 @@ class User extends CI_Controller
 		$nip = $this->session->userdata('nip');
 		$data = array('foto' => $this->uploadFoto()
 				);
-		if($this->M_user->ubahFoto($nip,$data)){
+		if($this->M_user->ubahData($nip,$data)){
 			$before = array('foto');
 			$this->update_session($before, $data);
 			$this->session->flashdata('msg_berhasil','foto berhasil diubah');
@@ -111,5 +113,61 @@ class User extends CI_Controller
 			redirect('User/acount');
 		}
 	}
+
+	function ubahPassword(){
+		$pass_lama = $this->M_user->getUser($this->session->userdata('nip'))->row();
+		if(password_verify($this->input->post('pass_lama'), $pass_lama->password)){
+			$data = ['password' => password_hash($this->input->post('pass_baru'), PASSWORD_DEFAULT,['cons' => 12])];
+			$this->M_user->ubahData($this->session->userdata('nip'),$data);
+			$this->session->set_flashdata('msg_berhasil', 'Password Berhasil diubah');
+			redirect('User/acount');
+		}else{
+			$this->session->set_flashdata('msg_berhasil', 'Password gagal diubah');
+			redirect('User/acount');
+		}
+	}
+
+	function ubahDataUser(){
+		$nip = $this->session->userdata('nip');
+		$data = [
+			'username' => $this->input->post('nama'),
+			'email' => $this->input->post('email'),
+			'no_tlpn' => $this->input->post('no_tlpn')
+		];
+		if($this->M_user->ubahData($nip,$data)){
+			$before = array('username','email','no_tlpn');
+			$this->update_session($before, $data);
+			$this->session->flashdata('msg_berhasil','foto berhasil diubah');
+			redirect('User/acount');
+		}else{
+			$this->session->flashdata('msg_berhasil','foto berhasil diubah');
+			redirect('User/acount');
+		}
+	}
+
+	function ubahDetailUser(){
+		$nip = $this->session->userdata('nip');
+		$data = array(
+			'id' 				=> '',
+			'nama_lengkap'		=> $this->input->post('nama_lengkap'),
+			'jenis_kelamin' 	=> $this->input->post('jenis_kelamin'),
+			'tgl_lahir'			=> $this->input->post('tanggal_lahir'),
+			'tempat_lahir'		=> $this->input->post('tempat_lahir'),
+			'provinsi'			=> $this->input->post('provinsi'),
+			'kota'				=> $this->input->post('kota'),
+			'alamat'			=> $this->input->post('alamat'),
+			'agama'				=> $this->input->post('agama'),
+			'status_perkawinan'	=> $this->input->post('status_perkawinan')
+		);
+		if($this->M_user->ubahDetail($nip,$data)){
+			$this->session->flashdata('msg_berhasil','foto berhasil diubah');
+			redirect('User/acount');
+		}else{
+			$this->session->flashdata('msg_berhasil','foto berhasil diubah');
+			redirect('User/acount');
+		}
+	}
+
+	
 
 }

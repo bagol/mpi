@@ -43,7 +43,7 @@
         		</div>
         	</div>
         </div>
-            <h3 class="title-2 m-b-40">Laporan Per Bulan</h3>
+            <h3 class="title-2 m-b-40">Laporan Masuk Per Bulan</h3>
             <canvas id="chartLaporan" height="196" style="display: block; width: 392px; height: 196px;" width="392" class="chartjs-render-monitor"></canvas>
         </div>
     </div>

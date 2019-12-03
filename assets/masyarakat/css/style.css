@@ -1,0 +1,28 @@
+body{
+  background-image: url('../images/ombudsman.jpg');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-color:#464646;
+}
+
+.container {
+	padding: 20px;
+	margin-top: 10px;
+}
+.wrapper	{
+	background: rgb(255,255,255);
+	padding: 10px;
+  z-index: 2;
+}
+
+.head-text	{
+	background: rgba(255,255,255,0.7);
+}
+@media only screen and (max-width: 767px) {
+  body {
+    
+    background-image: url(../images/ombudsman.jpg);
+  }
+}

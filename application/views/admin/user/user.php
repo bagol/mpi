@@ -25,7 +25,6 @@
                       <th>jabatan</th>
                       <th>Penempatan</th>
                       <th>Kantor</th>
-                      <th>Aksi</th>
                   </tr>
               </thead>
               <tbody>
@@ -37,7 +36,6 @@
                          <td><?= $pegawai['role']?></td>
                          <td><?= $pegawai['penempatan']?></td>
                          <td><?= $pegawai['kantor']?></td>
-                         <td><a href="" class="btn btn-success"><i class="far fa-edit"></i></a></td>
                       </tr>
                   <?php $no++; endforeach; ?>
               </tbody>

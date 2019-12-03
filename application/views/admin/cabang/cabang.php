@@ -16,13 +16,13 @@
 
 
 
-<div class="col-md-12 mt-4">
+<div class="col-sm-12 mt-4">
     <div class="card">
         <div class="card-header">
-            <strong class="card-title">Card with switch</strong>
+            <strong class="card-title">Data Cabang Ombudsman</strong>
         </div>
         <div class="card-body">
-          <table id="table_id" class="display table">
+          <table id="table_id" class="display table" width="100%">
               <thead>
                   <tr>
                       <th>No</th>
@@ -40,7 +40,7 @@
                          <td><?= $c['alamat']?></td>
                          <td><?= $c['kepala']?></td>
                          <td>
-                          <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModalEdit<?= $c['id'] ?>"><i class="far fa-edit"></i>
+                          <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModalEdit<?= $c['id'] ?>" data-prov="<?= $c['id_prov'] ?>" ><i class="far fa-edit"></i>
                           </button>
                          </td>
                       </tr>

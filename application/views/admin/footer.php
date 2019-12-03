@@ -59,5 +59,6 @@
   }
 </script>
 
+<?php var_dump($perbulan); ?>
 </body>
 </html>

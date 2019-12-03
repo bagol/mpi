@@ -4,7 +4,7 @@ class M_user extends CI_Model
 {
     public function getUser($nip)
     {
-    	$sql = "select a.foto as foto, a.nip as nip, a.username as username, a.email as email, c.nama as role,c.penempatan as penempatan,b.nama as kantor, a.password as password from user a join cabang b on a.id_cabang=b.id join role c on a.role=c.id where a.nip =".$this->db->escape($nip).";";
+    	$sql = "select * from get_user where nip =".$this->db->escape($nip).";";
         return $this->db->query($sql);
     }
 
@@ -26,8 +26,12 @@ class M_user extends CI_Model
         return $this->db->insert('detail_user',$detail);
     }
 
-    function ubahFoto($nip,$data){
+    function ubahData($nip,$data){
         $this->db->where('nip', $nip);
         return $this->db->update('user',$data);
+    }
+    function ubahDetail($nip,$data){
+        $this->db->where('nip', $nip);
+        return $this->db->update('detail_user',$data);
     }
 }

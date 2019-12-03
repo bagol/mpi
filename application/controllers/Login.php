@@ -39,6 +39,7 @@ class Login extends CI_Controller
                 ];
                 $this->session->set_userdata($user);
                 $this->session->set_flashdata('msg', 'Selamat Datang');
+                logUser('login',$user['nip']);
                 redirect('Login/ceksession');
             }else{
                 $this->session->set_flashdata('msg', 'Password Salah !!!');
@@ -69,6 +70,7 @@ class Login extends CI_Controller
     function logout(){
         //$this->session->unset_userdata();
         $this->session->sess_destroy();
+        logUser('logout',$this->session->userdata('nip'));
         redirect('Login');
     }
 }

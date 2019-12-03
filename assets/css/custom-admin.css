@@ -5,7 +5,12 @@
 	color : #fff !important;
 }
 
-@media(max-width:320px){
+.bg-gray{
+	background: #ccc;
+	
+}
+
+@media(max-width:450px){
     .card   {
         overflow-x: scroll;
     }

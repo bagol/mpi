@@ -11,6 +11,7 @@ class Cabang extends Admin
 	{
 		parent::__construct();
 		$this->load->model('M_cabang');
+		$this->load->helper('provinsi');
 	}
 
 	function tambah_cabang(){
@@ -27,6 +28,8 @@ class Cabang extends Admin
 		);
 		if($this->M_cabang->tambahCabang($data)){
 			$this->session->set_flashdata('msg_berhasil','Data Berhasil ditambahkan');
+			$aksi = "Menambahkan Cabang ".$this->input->post('nama')." - ".provinsi($this->input->post('provinsi'));
+			logUser($aksi,$this->session->userdata('nip'));
 			redirect('Admin/cabang');
 		}else{
 			$this->session->set_flashdata('msg_gagal','gagal menyimpan data');

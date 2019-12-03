@@ -38,7 +38,7 @@
 
     <!-- datatables -->
     <link rel="stylesheet" type="text/css" href="<?= base_url('assets/'); ?>DataTables/datatables.min.css"/>
-    <!-- <link rel="stylesheet" type="text/css" href="<?= base_url('assets/'); ?>DataTables/DataTables/datatables.bootstrap-4.min.css"/> -->
+   
 
 
 </head>

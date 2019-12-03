@@ -40,10 +40,10 @@
                 	</div>
                 </div>
                 <div class="row form-grup mt-2">
-                	<div class="col-md-3">Nama</div>
+                	<div class="col-md-3">Nama Panggilan</div>
                 	<div class="col-md-9">
                 		<input type="text" id="text-input" name="nama" placeholder="...." class="form-control">
-                		<small>Nama Pegawai</small>
+                		<small>Nama Panggilan Pegawai</small>
                 	</div>
                 </div>
                 <div class="row form-grup mt-2">

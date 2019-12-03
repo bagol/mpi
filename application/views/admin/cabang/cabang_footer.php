@@ -68,7 +68,7 @@
                     <label for="text-input" class=" form-control-label">email Cabang</label>
                 </div>
                 <div class="col-12 col-md-9">
-                    <input type="email" id="text-input" name="email" placeholder="emai" class="form-control">
+                    <input type="email" id="text-input" name="email" placeholder="email" class="form-control">
                     <small class="form-text text-muted">email Kantor Cabang</small>
                 </div>
             </div>
@@ -151,7 +151,7 @@
                         <label for="text-input" class=" form-control-label">Kota Cabang</label>
                     </div>
                     <div class="col-12 col-md-9">
-                        <select name="kota" id="kota" class="form-control" disabled>
+                        <select name="kota" id="kota-edit" class="form-control" disabled>
                           <option value="<?=$edit['id_kab']?>"><?=$edit['kota']?></option>
                         </select>
                         <small class="form-text text-muted">Kota Kantor Cabang</small>
@@ -207,6 +207,7 @@
 
 <script type="text/javascript" src="<?= base_url('assets/'); ?>DataTables/datatables.min.js"></script>
 <script>
+    var html = '';
 	$(document).ready( function () {
 	    $('#table_id').DataTable();
 	    $('#provinsi').change(function(event){
@@ -221,6 +222,7 @@
 			  });
 	    })
 	} );
+    
 	
 </script>
 

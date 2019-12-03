@@ -8,8 +8,8 @@
       </div>
 <?php endif ?>
 
-<div class="row">
-	<div class="col-lg-4 col-xs-12">
+<div class="row mt-3">
+	<div class="col-md-4 ">
 		<div class="card">
             <div class="card-header">
                 <strong class="card-title mb-3"> Foto Profile</strong>
@@ -36,25 +36,26 @@
             <div class="card-header">
                 <strong class="card-title">Data Pegawai</strong>
             </div>
+            <form action="<?= base_url('User/ubahDataUser')?>" method="post">
             <div class="card-body">
                 <div class="row form-grup mt-2">
                 	<div class="col-md-3">NIP</div>
                 	<div class="col-md-9">
-                		<input type="text" id="text-input" name="nip" value="<?= $user->nip ?>" class="form-control">
+                		<input type="text" id="text-input" name="nip" value="<?= $user->nip ?>" class="form-control" disabled>
                 		<small>Nomer Induk Pegawai</small>
                 	</div>
                 </div>
                 <div class="row form-grup mt-2">
-                	<div class="col-md-3">Nama</div>
+                	<div class="col-md-3">Nama Panggilan</div>
                 	<div class="col-md-9">
                 		<input type="text" id="text-input" name="nama" value="<?= $user->username ?>" class="form-control">
-                		<small>Nama Pegawai</small>
+                		<small>Nama Panggilan Pegawai</small>
                 	</div>
                 </div>
                 <div class="row form-grup mt-2">
                 	<div class="col-md-3">Jabatan</div>
                 	<div class="col-md-9">
-                		<input type="text" id="text-input" name="role" value="<?= $this->session->userdata('role'); ?>" class="form-control">
+                		<input type="text" disabled id="text-input" name="role" value="<?= $this->session->userdata('role'); ?> - <?= $this->session->userdata('penempatan'); ?> " class="form-control">
                 		<small>Jabatan</small>
                 	</div>
                 </div>
@@ -75,13 +76,15 @@
                 <div class="row form-grup mt-2">
                 	<div class="col-md-3">Kantor</div>
                 	<div class="col-md-9">
-                		<input type="text" id="text-input" name="kantor" value="<?= $this->session->userdata('kantor'); ?>"  class="form-control">
+                		<input type="text" disabled id="text-input" name="kantor" value="<?= $this->session->userdata('kantor'); ?>"  class="form-control">
                 		<small>Kantor Pegawai</small>
                 	</div>
                 </div>
             </div>
             <div class="card-footer">
-            	<button class="btn btn-info" > Simpan <i class="far fa-bookmark"></i> </button>
+            	<button class="btn btn-info mb-2" > Simpan <i class="far fa-bookmark"></i> </button>
+                </form>
+                <button type="button" class="btn btn-secondary mb-2" data-toggle="modal" data-target="#exampleModalUbahPassword"> Ganti Password <i class="fa fa-key"></i> </button>
             </div>
         </div>
     </div>
@@ -96,6 +99,7 @@
             <div class="card-body">
                 <div class="row">
                 	<div class="col-md-6">
+                        <form action="<?= base_url('User/ubahDetailUser') ?>" method="post">
                 		<div class="row form-grup mt-2">
 		                	<div class="col-md-3">Nama Lengkap</div>
 		                	<div class="col-md-9">
@@ -130,14 +134,20 @@
 		                <div class="row form-grup mt-2">
 		                	<div class="col-md-3">Provinsi</div>
 		                	<div class="col-md-9">
-		                		<input type="text" id="text-input" name="provinsi" value="<?= $user->provinsi ?>" class="form-control">
+		                		<select name="provinsi" id="provinsi" class="form-control">
+                                    <?php foreach ($provinsi as $p): ?>
+                                        <option value="<?= $p['id_prov'] ?>" <?= ($p['id_prov'] == $user->id_prov ? 'selected' : '') ?>><?= $p['nama'] ?></option>
+                                    <?php endforeach ?>            
+                                </select>
 		                		<small>Provinsi Tinggal Pegawai</small>
 		                	</div>
 		                </div>
 		                <div class="row form-grup mt-2">
 		                	<div class="col-md-3">Kota</div>
 		                	<div class="col-md-9">
-		                		<input type="text" id="text-input" name="kota" value="<?= $user->kota ?>" class="form-control">
+		                		<select name="kota" id="kota" class="form-control">
+                                                
+                                </select>
 		                		<small>Kota Tinggal Pegawai</small>
 		                	</div>
 		                </div>
@@ -153,7 +163,7 @@
 		                <div class="row form-grup mt-2">
 		                	<div class="col-md-3">Agama</div>
 		                	<div class="col-md-9">
-		                		<select name="jenis_kelamin" id="select" class="form-control">
+		                		<select name="agama" id="select" class="form-control">
                                     <option value="islam" <?= ($user->agama == 'islam' ? 'selected' : '') ?>>islam</option>
                                     <option value="kristen" <?= ($user->agama == 'kristen' ? 'selected' : '') ?>>kristen</option>
                                     <option value="budha" <?= ($user->agama == 'budha' ? 'selected' : '') ?>>budha</option>
@@ -166,7 +176,7 @@
 		                <div class="row form-grup mt-2">
 		                	<div class="col-md-3">Status Perkawinan</div>
 		                	<div class="col-md-9">
-		                		<select name="jenis_kelamin" id="select" class="form-control">
+		                		<select name="status_perkawinan" id="select" class="form-control">
                                     <option value="1" <?= ($user->status_perkawinan == 1 ? 'selected' : '') ?>>Belum Menikah</option>
                                     <option value="2" <?= ($user->status_perkawinan == 2 ? 'selected' : '') ?>>Sudah Menikah</option>
                                     <option value="3" <?= ($user->status_perkawinan == 3 ? 'selected' : '') ?>>Pernah Menikah</option>
@@ -179,6 +189,7 @@
             </div>
             <div class="card-footer ">
             	<button class="btn btn-info" > Simpan <i class="far fa-bookmark"></i> </button>
+                </form>
             </div>
         </div>
     </div>
